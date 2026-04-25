@@ -33,12 +33,13 @@ jobs:
         working-directory: portfolio
 
       - name: Build
-        run: npm run build -- --base-href /Web-Personal/
+        run: npm run build -- --base-href /
         working-directory: portfolio
 
-      - name: Deploy to gh-pages branch
+      - name: Deploy to user pages repository
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.GH_PAGES_TOKEN }}
+          external_repository: Romario-Fullstack-Senio/romario-fullstack-senio.github.io
           publish_dir: portfolio/dist/portfolio/browser
-          publish_branch: gh-pages
+          publish_branch: master
