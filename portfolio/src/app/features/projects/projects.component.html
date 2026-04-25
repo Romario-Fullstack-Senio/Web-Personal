@@ -1,0 +1,78 @@
+<section id="projects" class="section-padding">
+  <div class="container-max">
+    <app-section-title label="Portafolio" title="Proyectos Destacados" />
+
+    <!-- Filter tabs -->
+    <div class="flex flex-wrap gap-3 mb-12">
+      @for (filter of filters; track filter.value) {
+        <button (click)="service.setFilter(filter.value)"
+                class="px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 border"
+                [class.btn-primary]="service.activeFilter() === filter.value"
+                [class.btn-secondary]="service.activeFilter() !== filter.value">
+          {{ filter.label }}
+        </button>
+      }
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      @for (project of service.filteredProjects(); track project.id) {
+        <article class="group card-hover flex flex-col animate-fade-in-up">
+          <!-- Header -->
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+              </div>
+              @if (project.featured) {
+                <span class="text-xs bg-amber-500/20 border border-amber-500/50 text-amber-300 px-2 py-0.5 rounded-full font-bold">
+                  ⭐ Destacado
+                </span>
+              }
+            </div>
+
+            <!-- Links -->
+            <div class="flex items-center gap-2">
+              <a [href]="project.repoUrl" target="_blank" rel="noopener"
+                 class="p-2 hover:bg-slate-700 rounded-lg transition-colors"
+                 aria-label="Repositorio">
+                <svg class="w-5 h-5 text-slate-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+              </a>
+              @if (project.demoUrl) {
+                <a [href]="project.demoUrl" target="_blank" rel="noopener"
+                   class="p-2 hover:bg-slate-700 rounded-lg transition-colors"
+                   aria-label="Ver demo">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-400 group-hover:text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              }
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="flex-1 mb-4">
+            <h3 class="text-white font-bold text-lg mb-2 group-hover:text-indigo-300 transition-colors">
+              {{ project.title }}
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{{ project.description }}</p>
+          </div>
+
+          <!-- Tech Stack -->
+          <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-700">
+            @for (tech of project.technologies; track tech) {
+              <span class="text-xs text-slate-500 font-mono">{{ tech }}</span>
+              @if (!$last) {
+                <span class="text-slate-700">·</span>
+              }
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

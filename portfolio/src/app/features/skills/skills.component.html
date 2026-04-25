@@ -1,0 +1,73 @@
+<section id="skills" class="section-padding">
+  <div class="container-max">
+    <app-section-title label="Competencias" title="Skills & Tecnologías" />
+
+    <!-- Skills Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      @for (skillGroup of service.groupedSkills(); track skillGroup.category) {
+        <div class="card-base group hover:card-hover">
+          <!-- Category Header -->
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center">
+              <span class="text-lg">{{ getCategoryIcon(skillGroup.category) }}</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">{{ skillGroup.category }}</h3>
+          </div>
+
+          <!-- Skills List -->
+          <div class="space-y-3">
+            @for (skill of skillGroup.items; track skill.name) {
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-medium text-slate-300">{{ skill.name }}</span>
+                  <span class="text-xs text-slate-500">{{ skill.level }}%</span>
+                </div>
+                <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+                    [style.width.%]="skill.level"
+                    style="transition: width 0.6s ease-out"
+                  ></div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- CV Download Banner -->
+    <div
+      class="card-hover bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/30"
+    >
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-2">¿Quieres conocer más detalles?</h3>
+          <p class="text-slate-400 text-sm">
+            Descarga mi CV completo con experiencia detallada, certificaciones y más información.
+          </p>
+        </div>
+        <a
+          href="assets/cv/romario-cv.pdf"
+          download
+          class="btn-primary flex-shrink-0 whitespace-nowrap"
+        >
+          <svg
+            class="w-5 h-5 inline-block mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            />
+          </svg>
+          Descargar CV
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
