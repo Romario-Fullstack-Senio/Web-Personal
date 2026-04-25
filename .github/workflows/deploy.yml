@@ -16,6 +16,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: GH_PAGES_TOKEN
 
     steps:
       - name: Checkout
