@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: pages
@@ -36,10 +36,12 @@ jobs:
         run: npm run build -- --base-href /
         working-directory: portfolio
 
-      - name: Deploy to user pages repository
+      - name: Deploy to romario-fullstack-senio.github.io
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.GH_PAGES_TOKEN }}
           external_repository: Romario-Fullstack-Senio/romario-fullstack-senio.github.io
-          publish_dir: portfolio/dist/portfolio/browser
           publish_branch: master
+          publish_dir: portfolio/dist/portfolio/browser
+          force_orphan: true
+          enable_jekyll: false
