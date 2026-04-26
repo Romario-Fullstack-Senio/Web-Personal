@@ -5,6 +5,7 @@ import { ExperienceComponent } from '../experience/experience.component';
 import { HeroComponent } from '../hero/hero.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { SkillsComponent } from '../skills/skills.component';
+import { YoutubeComponent } from '../youtube/youtube.component';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ import { SkillsComponent } from '../skills/skills.component';
     ExperienceComponent,
     ProjectsComponent,
     SkillsComponent,
+    YoutubeComponent,
     CertificationsComponent,
   ],
   templateUrl: './home.component.html',

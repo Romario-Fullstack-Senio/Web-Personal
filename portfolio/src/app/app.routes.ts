@@ -31,5 +31,10 @@ export const routes: Routes = [
         (m) => m.CertificationsComponent,
       ),
   },
+  {
+    path: 'youtube',
+    loadComponent: () =>
+      import('./features/youtube/youtube.component').then((m) => m.YoutubeComponent),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
