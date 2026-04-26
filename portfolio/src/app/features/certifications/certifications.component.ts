@@ -1,14 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { PortfolioService } from '../../core/services/portfolio.service';
-import { SectionTitleComponent } from '../../shared/components/section-title/section-title.component';
 
 @Component({
-  selector: 'app-experience',
+  selector: 'app-certifications',
   standalone: true,
-  imports: [SectionTitleComponent],
-  templateUrl: './experience.component.html',
+  imports: [CommonModule],
+  templateUrl: './certifications.component.html',
+  styleUrl: './certifications.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExperienceComponent {
+export class CertificationsComponent {
   public readonly __portfolioService = inject(PortfolioService);
 }

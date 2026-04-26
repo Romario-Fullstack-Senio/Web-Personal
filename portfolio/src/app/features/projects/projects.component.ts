@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ProjectCategory } from '../../core/models/portfolio.models';
 import { PortfolioService } from '../../core/services/portfolio.service';
 import { SectionTitleComponent } from '../../shared/components/section-title/section-title.component';
@@ -8,11 +8,12 @@ import { SectionTitleComponent } from '../../shared/components/section-title/sec
   standalone: true,
   imports: [SectionTitleComponent],
   templateUrl: './projects.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent {
-  readonly service = inject(PortfolioService);
+  public readonly __portfolioService = inject(PortfolioService);
 
-  readonly filters: { label: string; value: ProjectCategory | 'all' }[] = [
+  public readonly filters: { label: string; value: ProjectCategory | 'all' }[] = [
     { label: 'Todos', value: 'all' },
     { label: 'Full Stack', value: 'fullstack' },
     { label: 'Frontend', value: 'frontend' },

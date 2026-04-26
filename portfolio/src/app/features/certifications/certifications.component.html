@@ -1,0 +1,75 @@
+<section id="certifications" class="section-padding">
+  <div class="container-max">
+    <h2 class="cert-title">Certificaciones Destacadas</h2>
+    <div class="mb-2">
+      <div
+        *ngIf="__portfolioService.certifications().length > 0; else noCerts"
+        class="grid grid-cols-1 md:grid-cols-2 gap-8"
+      >
+        <ng-container *ngFor="let cert of __portfolioService.certifications()">
+          <div class="card-base flex flex-col gap-3 p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-indigo-300 font-bold text-lg">{{ cert.name }}</span>
+              <span class="text-xs text-slate-400">({{ cert.year }})</span>
+            </div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-slate-400 text-xs">{{ cert.issuer }}</span>
+              <a
+                *ngIf="cert.url"
+                [href]="cert.url"
+                target="_blank"
+                class="text-indigo-300 underline text-xs hover:text-indigo-400 transition-colors"
+                >Ver certificado</a
+              >
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <ng-template #noCerts>
+        <div class="cert-empty">No hay certificaciones registradas.</div>
+      </ng-template>
+    </div>
+    <div class="mt-10 flex flex-col items-center">
+      <span class="text-slate-300 text-lg mb-3 font-semibold text-center">
+        ¿Quieres ver todos tus certificados oficiales?
+      </span>
+      <a
+        [href]="__portfolioService.senaCertUrl"
+        target="_blank"
+        class="btn-secondary px-8 py-3 text-lg font-bold shadow-lg hover:scale-105 transition-transform mb-8"
+      >
+        Consultar todos mis certificados SENA
+      </a>
+    </div>
+
+    <!-- CV Download Banner al final y centrado -->
+    <div
+      class="card-hover bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/30 mx-auto max-w-2xl flex flex-col items-center justify-center text-center p-8"
+    >
+      <h3 class="text-xl font-bold text-white mb-2">¿Quieres conocer más detalles?</h3>
+      <p class="text-slate-400 text-sm mb-4">
+        Descarga mi CV completo con experiencia detallada, certificaciones y más información.
+      </p>
+      <a
+        href="assets/cv/romario-cv.pdf"
+        download
+        class="btn-primary flex-shrink-0 whitespace-nowrap mt-2"
+      >
+        <svg
+          class="w-5 h-5 inline-block mr-2"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+          />
+        </svg>
+        Descargar CV
+      </a>
+    </div>
+  </div>
+</section>

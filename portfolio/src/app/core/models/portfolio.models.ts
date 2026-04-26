@@ -1,3 +1,9 @@
+export interface Certification {
+  name: string;
+  issuer: string;
+  year: string;
+  url?: string;
+}
 export interface Experience {
   id: number;
   role: string;

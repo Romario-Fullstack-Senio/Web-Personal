@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "E-Commerce Platform",
+    "description": "Plataforma de comercio electrónico con carrito en tiempo real, pagos con Stripe y panel de administración completo.",
+    "technologies": ["Angular", "NestJS", "PostgreSQL", "Redis", "Stripe"],
+    "repoUrl": "https://github.com/tu-usuario/ecommerce-platform",
+    "demoUrl": "https://demo.tuportafolio.dev",
+    "featured": true,
+    "category": "fullstack"
+  },
+  {
+    "id": 2,
+    "title": "DevOps Dashboard",
+    "description": "Dashboard para monitoreo de microservicios con métricas en tiempo real, alertas y visualización de logs centralizados.",
+    "technologies": ["React", "Node.js", "InfluxDB", "Grafana", "Docker"],
+    "repoUrl": "https://github.com/tu-usuario/devops-dashboard",
+    "featured": true,
+    "category": "devops"
+  },
+  {
+    "id": 3,
+    "title": "Task Manager API",
+    "description": "REST API robusta para gestión de tareas con autenticación JWT, roles, websockets y documentación Swagger completa.",
+    "technologies": ["NestJS", "TypeORM", "PostgreSQL", "Socket.io", "Swagger"],
+    "repoUrl": "https://github.com/tu-usuario/task-manager-api",
+    "category": "backend"
+  },
+  {
+    "id": 4,
+    "title": "UI Component Library",
+    "description": "Librería de componentes Angular reutilizables con más de 30 componentes accesibles, publicada en NPM con 500+ descargas mensuales.",
+    "technologies": ["Angular", "TypeScript", "Storybook", "Jest", "NPM"],
+    "repoUrl": "https://github.com/tu-usuario/ui-lib",
+    "demoUrl": "https://storybook.tuportafolio.dev",
+    "category": "frontend"
+  }
+]

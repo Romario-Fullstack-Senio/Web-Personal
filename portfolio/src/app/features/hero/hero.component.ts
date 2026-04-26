@@ -1,12 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
   templateUrl: './hero.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeroComponent {
-  readonly stack = [
+  public readonly stack = [
     'Angular 21',
     'TypeScript',
     'NestJS',
@@ -17,8 +18,8 @@ export class HeroComponent {
     'AWS',
   ];
 
-  readonly profileImageExists = signal(true);
-  readonly profileImageUrl = 'assets/images/profile.jpg';
+  public readonly profileImageExists = signal(true);
+  public readonly profileImageUrl = 'assets/images/profile.jpg';
 
   public onProfileImageError(): void {
     this.profileImageExists.set(false);

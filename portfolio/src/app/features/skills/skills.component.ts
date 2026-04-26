@@ -1,17 +1,26 @@
-import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { PortfolioService } from '../../core/services/portfolio.service';
 import { SectionTitleComponent } from '../../shared/components/section-title/section-title.component';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [SectionTitleComponent],
+  imports: [CommonModule, SectionTitleComponent],
   templateUrl: './skills.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkillsComponent {
-  readonly service = inject(PortfolioService);
+  public readonly __portfolioService = inject(PortfolioService);
 
-  getCategoryIcon(category: string): string {
+  public get certifications() {
+    return this.__portfolioService.certifications;
+  }
+  public get senaCertUrl() {
+    return this.__portfolioService.senaCertUrl;
+  }
+
+  public getCategoryIcon(category: string): string {
     const icons: Record<string, string> = {
       Frontend: '💻',
       Backend: '⚙️',

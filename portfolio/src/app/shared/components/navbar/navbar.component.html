@@ -11,13 +11,15 @@
 
     <!-- Desktop Nav -->
     <ul class="hidden md:flex items-center gap-8">
-      @for (link of navLinks; track link.href) {
-        <li>
-          <a [href]="link.href" class="btn-ghost hover:text-indigo-400">
-            {{ link.label }}
-          </a>
-        </li>
-      }
+      <li *ngFor="let link of navLinks">
+        <a
+          [routerLink]="link.href"
+          routerLinkActive="text-indigo-400"
+          class="btn-ghost hover:text-indigo-400"
+        >
+          {{ link.label }}
+        </a>
+      </li>
     </ul>
 
     <!-- Desktop CV Button -->
@@ -67,7 +69,8 @@
         @for (link of navLinks; track link.href) {
           <li>
             <a
-              [href]="link.href"
+              [routerLink]="link.href"
+              routerLinkActive="text-indigo-400"
               (click)="toggleMenu()"
               class="btn-ghost hover:text-indigo-400 block"
             >

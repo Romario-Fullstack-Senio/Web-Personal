@@ -1,31 +1,5 @@
 <app-navbar />
-
 <main>
-  <app-hero />
-
-  @defer (on viewport) {
-    <app-experience />
-  } @placeholder {
-    <div class="section-padding flex justify-center">
-      <div class="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
-    </div>
-  }
-
-  @defer (on viewport) {
-    <app-projects />
-  } @placeholder {
-    <div class="section-padding flex justify-center">
-      <div class="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
-    </div>
-  }
-
-  @defer (on viewport) {
-    <app-skills />
-  } @placeholder {
-    <div class="section-padding flex justify-center">
-      <div class="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
-    </div>
-  }
+  <router-outlet></router-outlet>
 </main>
-
 <app-footer />

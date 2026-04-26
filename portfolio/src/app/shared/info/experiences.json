@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "role": "Senior Full Stack Engineer",
+    "company": "TechCorp Solutions",
+    "period": "Ene 2023 – Presente",
+    "current": true,
+    "description": "Lideré el rediseño de la plataforma SaaS principal, migrando de Angular 12 a Angular 21 con arquitectura standalone. Reduje el tiempo de carga inicial en un 60% mediante SSR y lazy loading estratégico.",
+    "technologies": ["Angular", "Node.js", "PostgreSQL", "Docker", "AWS"]
+  },
+  {
+    "id": 2,
+    "role": "Full Stack Developer",
+    "company": "Innovatech Agency",
+    "period": "Mar 2021 – Dic 2022",
+    "description": "Desarrollé más de 12 aplicaciones web para clientes enterprise. Implementé pipelines CI/CD con GitHub Actions reduciendo tiempos de despliegue en un 40%.",
+    "technologies": ["React", "TypeScript", "NestJS", "MongoDB", "GitHub Actions"]
+  },
+  {
+    "id": 3,
+    "role": "Frontend Developer",
+    "company": "Startup Hub",
+    "period": "Jun 2019 – Feb 2021",
+    "description": "Construí interfaces modernas y accesibles (WCAG 2.1). Participé en decisiones de arquitectura frontend y mentoría a desarrolladores junior.",
+    "technologies": ["Angular", "RxJS", "Sass", "Jest", "Storybook"]
+  }
+]

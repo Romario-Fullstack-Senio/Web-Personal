@@ -1,28 +1,32 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, HostListener, signal } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterModule],
   templateUrl: './navbar.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-  scrolled = signal(false);
-  menuOpen = signal(false);
+  public readonly scrolled = signal(false);
+  public readonly menuOpen = signal(false);
 
-  readonly navLinks = [
-    { href: '#hero', label: 'Inicio' },
-    { href: '#experience', label: 'Experiencia' },
-    { href: '#projects', label: 'Proyectos' },
-    { href: '#skills', label: 'Skills' },
+  public readonly navLinks = [
+    { href: '/', label: 'Inicio' },
+    { href: '/experience', label: 'Experiencia' },
+    { href: '/projects', label: 'Proyectos' },
+    { href: '/skills', label: 'Skills' },
+    { href: '/certifications', label: 'Certificados' },
   ];
 
   @HostListener('window:scroll')
-  onScroll(): void {
+  public onScroll(): void {
     this.scrolled.set(window.scrollY > 20);
   }
 
-  toggleMenu(): void {
+  public toggleMenu(): void {
     this.menuOpen.update((v) => !v);
   }
 }
