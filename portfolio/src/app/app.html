@@ -1,5 +1,33 @@
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress-bar" [style.width]="scrollProgress() + '%'"></div>
+
+<!-- Neural Network Background -->
+<app-neural-network />
+
+<!-- Ambient Light -->
+<div #ambientLight class="ambient-light"></div>
+
+<!-- Custom Cursor -->
+<app-cursor />
+
 <app-navbar />
 <main>
   <router-outlet></router-outlet>
 </main>
 <app-footer />
+
+<!-- Back To Top -->
+@if (showBackToTop()) {
+  <button class="back-to-top" (click)="scrollToTop()" aria-label="Volver al inicio">
+    <svg
+      width="18"
+      height="18"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      viewBox="0 0 24 24"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+}

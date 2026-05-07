@@ -1,32 +1,44 @@
 <section id="skills" class="section-padding">
-  <div class="container-max">
+  <div class="container-max" #skillsSection>
     <app-section-title label="Competencias" title="Skills & Tecnologías" />
 
     <!-- Skills Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      @for (skillGroup of __portfolioService.groupedSkills(); track skillGroup.category) {
+      @for (
+        skillGroup of __portfolioService.groupedSkills();
+        track skillGroup.category;
+        let gi = $index
+      ) {
         <div class="card-base group hover:card-hover">
           <!-- Category Header -->
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center">
-              <span class="text-lg">{{ getCategoryIcon(skillGroup.category) }}</span>
+            <div
+              class="w-10 h-10 rounded-lg flex items-center justify-center"
+              style="background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(34, 211, 238, 0.2)"
+            >
+              <span class="text-lg exp-icon">{{ getCategoryIcon(skillGroup.category) }}</span>
             </div>
-            <h3 class="text-lg font-bold text-white">{{ skillGroup.category }}</h3>
+            <h3 class="text-lg font-bold" style="color: #f8fafc">{{ skillGroup.category }}</h3>
           </div>
 
           <!-- Skills List -->
-          <div class="space-y-3">
-            @for (skill of skillGroup.items; track skill.name) {
+          <div class="space-y-4">
+            @for (skill of skillGroup.items; track skill.name; let si = $index) {
               <div>
                 <div class="flex items-center justify-between mb-2">
-                  <span class="text-sm font-medium text-slate-300">{{ skill.name }}</span>
-                  <span class="text-xs text-slate-500">{{ skill.level }}%</span>
+                  <span class="text-sm font-medium" style="color: #94a3b8">{{ skill.name }}</span>
+                  <span class="text-xs font-semibold" style="color: #22d3ee"
+                    >{{ skill.level }}%</span
+                  >
                 </div>
-                <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                <div
+                  class="h-2 rounded-full overflow-hidden"
+                  style="background: rgba(30, 32, 40, 0.8)"
+                >
                   <div
-                    class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
-                    [style.width.%]="skill.level"
-                    style="transition: width 0.6s ease-out"
+                    class="h-full skill-bar-fill skill-bar-gradient rounded-full"
+                    [style.width]="animationTriggered() ? skill.level + '%' : '0%'"
+                    [style.transition-delay]="animationTriggered() ? getBarDelay(gi, si) : '0ms'"
                   ></div>
                 </div>
               </div>

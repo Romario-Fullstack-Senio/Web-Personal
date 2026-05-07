@@ -1,7 +1,7 @@
 <nav
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-slate-800/50"
-  [class.bg-slate-900/80]="scrolled()"
-  [class.backdrop-blur-md]="scrolled()"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  [class.navbar-glass]="scrolled()"
+  [style.borderBottom]="!scrolled() ? '1px solid transparent' : ''"
 >
   <div class="container-max mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
@@ -14,8 +14,9 @@
       <li *ngFor="let link of navLinks">
         <a
           [routerLink]="link.href"
-          routerLinkActive="text-indigo-400"
-          class="btn-ghost hover:text-indigo-400"
+          class="nav-link btn-ghost transition-colors duration-200"
+          [class.active-link]="isActive(link.href)"
+          (click)="addRipple($event)"
         >
           {{ link.label }}
         </a>
@@ -24,16 +25,38 @@
 
     <!-- Desktop CV Button -->
     <div class="hidden md:flex items-center gap-4">
-      <a href="assets/cv/romario-cv.pdf" download class="btn-primary text-sm py-2 px-4">
-        <svg class="w-4 h-4 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <a href="assets/cv/romario-cv.pdf" download class="btn-cv">
+        <!-- Download icon -->
+        <svg
+          class="cv-icon w-3.5 h-3.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            d="M12 3v13m0 0l-4-4m4 4l4-4M4 17v1a2 2 0 002 2h12a2 2 0 002-2v-1"
           />
         </svg>
-        CV
+        <!-- Label -->
+        <span> CV</span>
+        <!-- Badge formato PDF -->
+        <span
+          style="
+            font-size: 0.6rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            padding: 1px 5px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            line-height: 1.4;
+          "
+          >PDF</span
+        >
       </a>
     </div>
 
@@ -54,7 +77,7 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
+          [attr.d]="menuOpen() ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'"
         />
       </svg>
     </button>
@@ -63,28 +86,35 @@
   <!-- Mobile Menu -->
   @if (menuOpen()) {
     <div
-      class="md:hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-800 px-6 py-4 animate-fade-in-up"
+      class="md:hidden border-t px-6 py-4 animate-fade-in-up"
+      style="
+        background: rgba(11, 12, 16, 0.96);
+        border-color: rgba(37, 99, 235, 0.2);
+        backdrop-filter: blur(20px);
+      "
     >
-      <ul class="flex flex-col gap-4">
+      <ul class="flex flex-col gap-2">
         @for (link of navLinks; track link.href) {
           <li>
             <a
               [routerLink]="link.href"
-              routerLinkActive="text-indigo-400"
-              (click)="toggleMenu()"
-              class="btn-ghost hover:text-indigo-400 block"
+              class="nav-link btn-ghost block py-3 transition-colors duration-200"
+              [class.active-link]="isActive(link.href)"
+              (click)="toggleMenu(); addRipple($event)"
             >
               {{ link.label }}
             </a>
           </li>
         }
-        <a
-          href="assets/cv/romario-cv.pdf"
-          download
-          class="btn-primary py-2 px-3 text-center text-sm"
-        >
-          Descargar CV
-        </a>
+        <li class="pt-2">
+          <a
+            href="assets/cv/romario-cv.pdf"
+            download
+            class="btn-primary py-2 px-3 text-center text-sm w-full justify-center"
+          >
+            Descargar CV
+          </a>
+        </li>
       </ul>
     </div>
   }

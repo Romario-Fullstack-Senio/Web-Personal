@@ -1,161 +1,405 @@
-<footer class="bg-slate-900/50 border-t border-slate-800 section-padding">
+<footer
+  class="relative border-t section-padding overflow-hidden"
+  style="background: rgba(11, 12, 16, 0.95); border-color: rgba(37, 99, 235, 0.2)"
+>
+  <!-- Glow top border -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px"
+    style="background: linear-gradient(90deg, transparent, #2563eb 30%, #22d3ee 70%, transparent)"
+  ></div>
+
   <div class="container-max">
-    <!-- Main Footer Content -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <!-- Main Footer Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
       <!-- Brand -->
       <div>
         <a href="#hero" class="text-2xl font-bold mb-4 block">
           <span class="gradient-text">&lt;RS /&gt;</span>
         </a>
-        <p class="text-slate-400 text-sm leading-relaxed">
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">
           Senior Full Stack Engineer especializado en Angular y Java. Construyo soluciones web
           escalables y performantes.
         </p>
+        <!-- Location badge -->
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs"
+          style="background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.25)"
+        >
+          <span>🇨🇴</span>
+          <span class="text-slate-300">Colombia</span>
+          <span class="w-px h-3" style="background: rgba(148, 163, 184, 0.3)"></span>
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-green-400"
+            style="animation: pulse 2s infinite"
+          ></span>
+          <span style="color: #22d3ee">Remoto</span>
+        </div>
       </div>
 
       <!-- Quick Links -->
       <div>
-        <h4 class="font-bold text-white mb-4">Navegación</h4>
-        <ul class="space-y-2">
+        <h4 class="font-bold text-white mb-5 text-sm tracking-wider uppercase">Navegación</h4>
+        <ul class="space-y-3">
           <li>
             <a
-              href="#experience"
-              class="text-slate-400 hover:text-indigo-400 transition-colors text-sm"
-              >Experiencia</a
+              [routerLink]="'/experience'"
+              class="group flex items-center gap-2 text-slate-400 text-sm transition-all duration-200 hover:text-cyan-400"
             >
+              <svg
+                class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 duration-200"
+                style="color: #22d3ee"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+              Experiencia
+            </a>
           </li>
           <li>
             <a
-              href="#projects"
-              class="text-slate-400 hover:text-indigo-400 transition-colors text-sm"
-              >Proyectos</a
+              [routerLink]="'/projects'"
+              class="group flex items-center gap-2 text-slate-400 text-sm transition-all duration-200 hover:text-cyan-400"
             >
+              <svg
+                class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 duration-200"
+                style="color: #22d3ee"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+              Proyectos
+            </a>
           </li>
           <li>
-            <a href="#skills" class="text-slate-400 hover:text-indigo-400 transition-colors text-sm"
-              >Skills</a
+            <a
+              [routerLink]="'/skills'"
+              class="group flex items-center gap-2 text-slate-400 text-sm transition-all duration-200 hover:text-cyan-400"
             >
+              <svg
+                class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 duration-200"
+                style="color: #22d3ee"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+              Skills
+            </a>
+          </li>
+          <li>
+            <a
+              [routerLink]="'/youtube'"
+              class="group flex items-center gap-2 text-slate-400 text-sm transition-all duration-200 hover:text-cyan-400"
+            >
+              <svg
+                class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 duration-200"
+                style="color: #22d3ee"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+              YouTube
+            </a>
           </li>
           <li>
             <a
               href="assets/cv/romario-cv.pdf"
               download
-              class="text-slate-400 hover:text-indigo-400 transition-colors text-sm"
-              >Descargar CV</a
+              class="group flex items-center gap-2 text-slate-400 text-sm transition-all duration-200 hover:text-cyan-400"
             >
+              <svg
+                class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 duration-200"
+                style="color: #22d3ee"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+              Descargar CV
+            </a>
           </li>
         </ul>
       </div>
 
-      <!-- Social Links -->
+      <!-- Contact + Social -->
       <div>
-        <h4 class="font-bold text-white mb-4">Conecta conmigo</h4>
-        <div class="flex items-center gap-4">
-          <!-- GitHub -->
+        <h4 class="font-bold text-white mb-5 text-sm tracking-wider uppercase">Contáctame</h4>
+
+        <!-- Email links -->
+        <div class="space-y-3 mb-6">
+          <a
+            href="mailto:ingenieroromario@gmail.com"
+            class="group flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all duration-300"
+            style="background: rgba(30, 32, 40, 0.5); border: 1px solid rgba(37, 99, 235, 0.15)"
+            onmouseover="
+              this.style.borderColor = 'rgba(34,211,238,0.4)';
+              this.style.boxShadow = '0 0 20px rgba(34,211,238,0.1)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(37,99,235,0.15)';
+              this.style.boxShadow = 'none';
+            "
+          >
+            <div
+              class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors duration-300"
+              style="background: rgba(37, 99, 235, 0.15)"
+            >
+              <svg
+                class="w-4 h-4"
+                style="color: #22d3ee"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="text-xs text-slate-500 leading-none mb-0.5">Principal</span>
+              <span
+                class="text-xs font-medium text-slate-300 group-hover:text-cyan-400 transition-colors truncate"
+                >ingenieroromario&#64;gmail.com</span
+              >
+            </div>
+          </a>
+
+          <a
+            href="mailto:romario.fullstack.senior@gmail.com"
+            class="group flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all duration-300"
+            style="background: rgba(30, 32, 40, 0.5); border: 1px solid rgba(37, 99, 235, 0.15)"
+            onmouseover="
+              this.style.borderColor = 'rgba(34,211,238,0.4)';
+              this.style.boxShadow = '0 0 20px rgba(34,211,238,0.1)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(37,99,235,0.15)';
+              this.style.boxShadow = 'none';
+            "
+          >
+            <div
+              class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+              style="background: rgba(37, 99, 235, 0.15)"
+            >
+              <svg
+                class="w-4 h-4"
+                style="color: #22d3ee"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="text-xs text-slate-500 leading-none mb-0.5">Profesional</span>
+              <span
+                class="text-xs font-medium text-slate-300 group-hover:text-cyan-400 transition-colors truncate"
+                >romario.fullstack.senior&#64;gmail.com</span
+              >
+            </div>
+          </a>
+        </div>
+
+        <!-- WhatsApp direct -->
+        <a
+          href="https://wa.me/573206284023"
+          target="_blank"
+          rel="noopener"
+          class="group flex items-center gap-3 px-4 py-2.5 rounded-xl mb-6 transition-all duration-300"
+          style="background: rgba(30, 32, 40, 0.5); border: 1px solid rgba(37, 99, 235, 0.15)"
+          onmouseover="
+            this.style.borderColor = 'rgba(34,211,238,0.4)';
+            this.style.boxShadow = '0 0 20px rgba(34,211,238,0.1)';
+          "
+          onmouseout="
+            this.style.borderColor = 'rgba(37,99,235,0.15)';
+            this.style.boxShadow = 'none';
+          "
+        >
+          <div
+            class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+            style="background: rgba(37, 99, 235, 0.15)"
+          >
+            <svg class="w-4 h-4" style="color: #22d3ee" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.031-.967-.273-.099-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.2 5.077 4.363.71.306 1.263.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.617h-.001a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374A9.86 9.86 0 012.1 11.893C2.122 6.763 6.687 2.199 12 2.199c2.637 0 5.112 1.027 6.988 2.896A9.802 9.802 0 0121.9 12.11c-.022 5.13-4.587 9.692-9.849 9.889zm8.413-18.302A11.815 11.815 0 0012 0C5.383 0 0 5.383 0 12c0 2.121.555 4.197 1.604 6.032L.057 23.944a1.001 1.001 0 001.225 1.225l5.912-1.545A11.934 11.934 0 0012 24c6.617 0 12-5.383 12-12 0-3.192-1.247-6.191-3.515-8.303z"
+              />
+            </svg>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="text-xs text-slate-500 leading-none mb-0.5">WhatsApp</span>
+            <span
+              class="text-xs font-medium text-slate-300 group-hover:text-cyan-400 transition-colors"
+              >+57 320 628 4023</span
+            >
+          </div>
+        </a>
+
+        <!-- Social Icons -->
+        <h4 class="font-bold mb-3 text-xs tracking-wider uppercase text-slate-500">
+          Redes sociales
+        </h4>
+        <div class="flex items-center gap-3 flex-wrap">
           <a
             href="https://github.com"
             target="_blank"
             rel="noopener"
-            class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-indigo-600 rounded-lg transition-all duration-300"
             aria-label="GitHub"
+            class="w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-300"
+            style="background: rgba(30, 32, 40, 0.8); border: 1px solid rgba(37, 99, 235, 0.2)"
+            onmouseover="
+              this.style.background = 'rgba(37,99,235,0.25)';
+              this.style.borderColor = 'rgba(34,211,238,0.5)';
+              this.style.boxShadow = '0 0 18px rgba(37,99,235,0.4)';
+            "
+            onmouseout="
+              this.style.background = 'rgba(30,32,40,0.8)';
+              this.style.borderColor = 'rgba(37,99,235,0.2)';
+              this.style.boxShadow = 'none';
+            "
           >
-            <svg
-              class="w-5 h-5 text-slate-400 hover:text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
               />
             </svg>
           </a>
-          <!-- LinkedIn -->
           <a
             href="https://linkedin.com"
             target="_blank"
             rel="noopener"
-            class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-indigo-600 rounded-lg transition-all duration-300"
             aria-label="LinkedIn"
+            class="w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-300"
+            style="background: rgba(30, 32, 40, 0.8); border: 1px solid rgba(37, 99, 235, 0.2)"
+            onmouseover="
+              this.style.background = 'rgba(37,99,235,0.25)';
+              this.style.borderColor = 'rgba(34,211,238,0.5)';
+              this.style.boxShadow = '0 0 18px rgba(37,99,235,0.4)';
+            "
+            onmouseout="
+              this.style.background = 'rgba(30,32,40,0.8)';
+              this.style.borderColor = 'rgba(37,99,235,0.2)';
+              this.style.boxShadow = 'none';
+            "
           >
-            <svg
-              class="w-5 h-5 text-slate-400 hover:text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.945v5.442h-3.554s.05-8.836 0-9.754h3.554v1.391c.434-.671 1.208-1.627 2.942-1.627 2.147 0 3.757 1.403 3.757 4.42v5.57zM5.337 8.855c-1.144 0-1.915-.762-1.915-1.715 0-.957.77-1.715 1.958-1.715 1.187 0 1.915.758 1.94 1.715 0 .953-.753 1.715-1.983 1.715zm1.946 11.597H3.392V9.298h3.891v11.154zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
               />
             </svg>
           </a>
-          <!-- WhatsApp -->
           <a
             href="https://wa.me/573206284023"
             target="_blank"
             rel="noopener"
-            class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-green-500 rounded-lg transition-all duration-300"
             aria-label="WhatsApp"
+            class="w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-300"
+            style="background: rgba(30, 32, 40, 0.8); border: 1px solid rgba(37, 99, 235, 0.2)"
+            onmouseover="
+              this.style.background = 'rgba(34,197,94,0.2)';
+              this.style.borderColor = 'rgba(34,197,94,0.5)';
+              this.style.boxShadow = '0 0 18px rgba(34,197,94,0.3)';
+            "
+            onmouseout="
+              this.style.background = 'rgba(30,32,40,0.8)';
+              this.style.borderColor = 'rgba(37,99,235,0.2)';
+              this.style.boxShadow = 'none';
+            "
           >
-            <svg
-              class="w-5 h-5 text-slate-400 hover:text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.031-.967-.273-.099-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.2 5.077 4.363.71.306 1.263.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.617h-.001a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374A9.86 9.86 0 012.1 11.893C2.122 6.763 6.687 2.199 12 2.199c2.637 0 5.112 1.027 6.988 2.896A9.802 9.802 0 0121.9 12.11c-.022 5.13-4.587 9.692-9.849 9.889zm8.413-18.302A11.815 11.815 0 0012 0C5.383 0 0 5.383 0 12c0 2.121.555 4.197 1.604 6.032L.057 23.944a1.001 1.001 0 001.225 1.225l5.912-1.545A11.934 11.934 0 0012 24c6.617 0 12-5.383 12-12 0-3.192-1.247-6.191-3.515-8.303z"
               />
             </svg>
           </a>
-          <!-- Facebook -->
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener"
-            class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-blue-600 rounded-lg transition-all duration-300"
-            aria-label="Facebook"
-          >
-            <svg
-              class="w-5 h-5 text-slate-400 hover:text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"
-              />
-            </svg>
-          </a>
-          <!-- Instagram -->
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener"
-            class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-pink-500 rounded-lg transition-all duration-300"
             aria-label="Instagram"
+            class="w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-300"
+            style="background: rgba(30, 32, 40, 0.8); border: 1px solid rgba(37, 99, 235, 0.2)"
+            onmouseover="
+              this.style.background = 'rgba(236,72,153,0.2)';
+              this.style.borderColor = 'rgba(236,72,153,0.5)';
+              this.style.boxShadow = '0 0 18px rgba(236,72,153,0.3)';
+            "
+            onmouseout="
+              this.style.background = 'rgba(30,32,40,0.8)';
+              this.style.borderColor = 'rgba(37,99,235,0.2)';
+              this.style.boxShadow = 'none';
+            "
           >
-            <svg
-              class="w-5 h-5 text-slate-400 hover:text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
               <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.567 5.782 2.295 7.148 2.233 8.414 2.175 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.425 3.678 1.406c-.98.98-1.274 2.092-1.334 3.374C2.013 8.332 2 8.741 2 12c0 3.259.013 3.668.072 4.948.06 1.282.354 2.394 1.334 3.374.98.98 2.092 1.274 3.374 1.334C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.282-.06 2.394-.354 3.374-1.334.98-.98 1.274-2.092 1.334-3.374.059-1.28.072-1.689.072-4.948s-.013-3.668-.072-4.948c-.06-1.282-.354-2.394-1.334-3.374-.98-.98-2.092-1.274-3.374-1.334C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm7.2-11.406a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0zm-1.44 1.44a.001.001 0 100-2.88.001.001 0 000 2.88z"
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.567 5.782 2.295 7.148 2.233 8.414 2.175 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.425 3.678 1.406c-.98.98-1.274 2.092-1.334 3.374C2.013 8.332 2 8.741 2 12c0 3.259.013 3.668.072 4.948.06 1.282.354 2.394 1.334 3.374.98.98 2.092 1.274 3.374 1.334C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.282-.06 2.394-.354 3.374-1.334.98-.98 1.274-2.092 1.334-3.374.059-1.28.072-1.689.072-4.948s-.013-3.668-.072-4.948c-.06-1.282-.354-2.394-1.334-3.374-.98-.98-2.092-1.274-3.374-1.334C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm7.2-11.406a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"
               />
             </svg>
           </a>
-          <!-- X (Twitter) -->
           <a
-            href="https://x.com"
+            href="https://youtube.com/@RomarioFullstackSenior"
             target="_blank"
             rel="noopener"
-            class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-black rounded-lg transition-all duration-300"
-            aria-label="X (Twitter)"
+            aria-label="YouTube"
+            class="w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-300"
+            style="background: rgba(30, 32, 40, 0.8); border: 1px solid rgba(37, 99, 235, 0.2)"
+            onmouseover="
+              this.style.background = 'rgba(220,38,38,0.2)';
+              this.style.borderColor = 'rgba(220,38,38,0.5)';
+              this.style.boxShadow = '0 0 18px rgba(220,38,38,0.3)';
+            "
+            onmouseout="
+              this.style.background = 'rgba(30,32,40,0.8)';
+              this.style.borderColor = 'rgba(37,99,235,0.2)';
+              this.style.boxShadow = 'none';
+            "
           >
-            <svg
-              class="w-5 h-5 text-slate-400 hover:text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
               <path
-                d="M22.162 0H1.838C.822 0 0 .822 0 1.838v20.324C0 23.178.822 24 1.838 24h20.324A1.84 1.84 0 0024 22.162V1.838A1.84 1.84 0 0022.162 0zM7.19 20.452H3.548V9.048H7.19v11.404zM5.369 7.633a2.11 2.11 0 110-4.22 2.11 2.11 0 010 4.22zm15.083 12.819h-3.641v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.945v5.442h-3.641V9.048h3.641v1.391c.434-.671 1.208-1.627 2.942-1.627 2.147 0 3.757 1.403 3.757 4.42v7.22z"
+                d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"
               />
             </svg>
           </a>
@@ -163,17 +407,29 @@
       </div>
     </div>
 
-    <!-- Divider -->
-    <div class="border-t border-slate-800 pt-8">
-      <!-- Bottom Footer -->
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-slate-500 text-sm">
-          &copy; {{ date }} Ingeniero Romario José González Vega. Todos los derechos reservados.
-        </p>
-        <p class="text-slate-500 text-sm">
-          Diseñado y desarrollado con <span class="text-red-400">❤️</span> usando Angular 21
-        </p>
-      </div>
+    <!-- Divider with gradient -->
+    <div
+      class="h-px mb-6"
+      style="
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(37, 99, 235, 0.3),
+          rgba(34, 211, 238, 0.3),
+          transparent
+        );
+      "
+    ></div>
+
+    <!-- Bottom -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-slate-500 text-xs">
+        &copy; {{ date }} Romario José González Vega — Todos los derechos reservados.
+      </p>
+      <p class="text-slate-500 text-xs flex items-center gap-1.5">
+        Hecho con <span class="text-red-400">❤️</span> en
+        <span style="color: #22d3ee">Angular 21</span>
+      </p>
     </div>
   </div>
 </footer>

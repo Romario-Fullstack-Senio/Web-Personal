@@ -9,7 +9,7 @@
         <ng-container *ngFor="let cert of __portfolioService.certifications()">
           <div class="card-base flex flex-col gap-3 p-6">
             <div class="flex items-center gap-2 mb-1">
-              <span class="text-indigo-300 font-bold text-lg">{{ cert.name }}</span>
+              <span class="font-bold text-lg" style="color: #22d3ee">{{ cert.name }}</span>
               <span class="text-xs text-slate-400">({{ cert.year }})</span>
             </div>
             <div class="flex items-center gap-2 mb-2">
@@ -18,7 +18,7 @@
                 *ngIf="cert.url"
                 [href]="cert.url"
                 target="_blank"
-                class="text-indigo-300 underline text-xs hover:text-indigo-400 transition-colors"
+                class="text-accent underline text-xs hover:text-cyan-300 transition-colors font-medium"
                 >Ver certificado</a
               >
             </div>
@@ -44,7 +44,12 @@
 
     <!-- CV Download Banner al final y centrado -->
     <div
-      class="card-hover bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/30 mx-auto max-w-2xl flex flex-col items-center justify-center text-center p-8"
+      class="card-hover mx-auto max-w-2xl flex flex-col items-center justify-center text-center p-8 rounded-2xl"
+      style="
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(34, 211, 238, 0.05));
+        border: 1px solid rgba(37, 99, 235, 0.28);
+        backdrop-filter: blur(12px);
+      "
     >
       <h3 class="text-xl font-bold text-white mb-2">¿Quieres conocer más detalles?</h3>
       <p class="text-slate-400 text-sm mb-4">
