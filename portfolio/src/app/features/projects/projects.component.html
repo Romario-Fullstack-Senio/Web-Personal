@@ -57,6 +57,7 @@
 
             <!-- Links -->
             <div class="flex items-center gap-2">
+              @if (project.repoUrl) {
               <a
                 [href]="project.repoUrl"
                 target="_blank"
@@ -74,6 +75,7 @@
                   />
                 </svg>
               </a>
+              }
               @if (project.demoUrl) {
                 <a
                   [href]="project.demoUrl"
