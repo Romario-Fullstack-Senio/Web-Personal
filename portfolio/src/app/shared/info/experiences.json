@@ -1,27 +1,35 @@
 [
   {
     "id": 1,
-    "role": "Senior Full Stack Engineer",
-    "company": "TechCorp Solutions",
-    "period": "Ene 2023 – Presente",
+    "role": "Desarrollador Senior & Scrum Master",
+    "company": "Thomas Greg & Sons",
+    "period": "Feb 2024 – Presente",
     "current": true,
-    "description": "Lideré el rediseño de la plataforma SaaS principal, migrando de Angular 12 a Angular 21 con arquitectura standalone. Reduje el tiempo de carga inicial en un 60% mediante SSR y lazy loading estratégico.",
-    "technologies": ["Angular", "Node.js", "PostgreSQL", "Docker", "AWS"]
+    "description": "Lidero equipos Scrum de 6 a 10 personas con SAFe Agile. Diseñé microservicios en Java 21 con Spring Boot 3.x y arquitectura hexagonal (+40% throughput), migré el frontend legado a Angular 20 con NgRx y Signals (-35% tiempo de carga) e integré GitHub Copilot y OpenAI API en el ciclo de desarrollo (+25% productividad). Implementé CI/CD con GitHub Actions y Jenkins sobre Docker y Kubernetes en AWS y Azure, establecí estándares de Clean Architecture, DDD, SonarQube y OWASP, y mentoré a 4 desarrolladores reduciendo el onboarding de 4 a 2 semanas.",
+    "technologies": ["Java 21", "Spring Boot 3", "Angular 20", "NgRx", "Kubernetes", "AWS", "Azure", "OpenAI API", "Power BI"]
   },
   {
     "id": 2,
-    "role": "Full Stack Developer",
-    "company": "Innovatech Agency",
-    "period": "Mar 2021 – Dic 2022",
-    "description": "Desarrollé más de 12 aplicaciones web para clientes enterprise. Implementé pipelines CI/CD con GitHub Actions reduciendo tiempos de despliegue en un 40%.",
-    "technologies": ["React", "TypeScript", "NestJS", "MongoDB", "GitHub Actions"]
+    "role": "Desarrollador Estándar",
+    "company": "Thomas Greg & Sons",
+    "period": "Ene 2023 – Ene 2024",
+    "description": "Promovido desde Desarrollador Junior por desempeño. Mayor autonomía en módulos backend y frontend, diseño de APIs REST, integración de servicios con OAuth2 y JWT, y adopción de buenas prácticas y code review entre pares.",
+    "technologies": ["Java", "Spring Boot", "Angular", "REST", "OAuth2", "JWT"]
   },
   {
     "id": 3,
-    "role": "Frontend Developer",
-    "company": "Startup Hub",
-    "period": "Jun 2019 – Feb 2021",
-    "description": "Construí interfaces modernas y accesibles (WCAG 2.1). Participé en decisiones de arquitectura frontend y mentoría a desarrolladores junior.",
-    "technologies": ["Angular", "RxJS", "Sass", "Jest", "Storybook"]
+    "role": "Desarrollador Junior",
+    "company": "Thomas Greg & Sons",
+    "period": "Nov 2021 – Ene 2023",
+    "description": "Desarrollo y mantenimiento de funcionalidades en Java/Spring Boot y Angular, corrección de errores y pruebas funcionales, con aprendizaje acelerado de Scrum/SAFe y estándares internos de desarrollo.",
+    "technologies": ["Java", "Spring Boot", "Angular", "Scrum", "SAFe"]
+  },
+  {
+    "id": 4,
+    "role": "Desarrollador Web",
+    "company": "Akivoy",
+    "period": "Jun 2020 – Nov 2021",
+    "description": "Integré frontend y backend en aplicaciones Angular 8 y .NET, usando MongoDB como base de datos NoSQL. Participé en el ciclo completo: análisis de requerimientos, codificación, pruebas y despliegue.",
+    "technologies": ["Angular 8", ".NET", "MongoDB"]
   }
 ]

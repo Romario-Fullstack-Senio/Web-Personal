@@ -1,38 +1,28 @@
 [
   {
     "id": 1,
-    "title": "E-Commerce Platform",
-    "description": "Plataforma de comercio electrónico con carrito en tiempo real, pagos con Stripe y panel de administración completo.",
-    "technologies": ["Angular", "NestJS", "PostgreSQL", "Redis", "Stripe"],
-    "repoUrl": "https://github.com/tu-usuario/ecommerce-platform",
-    "demoUrl": "https://demo.tuportafolio.dev",
+    "title": "Transporte Terrestre T3",
+    "description": "Sistema de validación y conteo vehicular que sincroniza el conteo de vehículos de entrada y salida en los despachos de las terminales de transporte terrestre con el SICOV.",
+    "technologies": ["Java 21", "Spring Boot", "Angular", "Microservicios", "Oracle"],
+    "repoUrl": "",
     "featured": true,
     "category": "fullstack"
   },
   {
     "id": 2,
-    "title": "DevOps Dashboard",
-    "description": "Dashboard para monitoreo de microservicios con métricas en tiempo real, alertas y visualización de logs centralizados.",
-    "technologies": ["React", "Node.js", "InfluxDB", "Grafana", "Docker"],
-    "repoUrl": "https://github.com/tu-usuario/devops-dashboard",
+    "title": "Vía Rápida",
+    "description": "Sistema de pago electrónico TAG para el cobro en peajes a nivel nacional en Colombia.",
+    "technologies": ["Java", "Spring Boot", "Angular", "Kafka", "PostgreSQL"],
+    "repoUrl": "",
     "featured": true,
-    "category": "devops"
+    "category": "fullstack"
   },
   {
     "id": 3,
-    "title": "Task Manager API",
-    "description": "REST API robusta para gestión de tareas con autenticación JWT, roles, websockets y documentación Swagger completa.",
-    "technologies": ["NestJS", "TypeORM", "PostgreSQL", "Socket.io", "Swagger"],
-    "repoUrl": "https://github.com/tu-usuario/task-manager-api",
-    "category": "backend"
-  },
-  {
-    "id": 4,
-    "title": "UI Component Library",
-    "description": "Librería de componentes Angular reutilizables con más de 30 componentes accesibles, publicada en NPM con 500+ descargas mensuales.",
-    "technologies": ["Angular", "TypeScript", "Storybook", "Jest", "NPM"],
-    "repoUrl": "https://github.com/tu-usuario/ui-lib",
-    "demoUrl": "https://storybook.tuportafolio.dev",
-    "category": "frontend"
+    "title": "Vial Plus",
+    "description": "Sistema de gestión y control de discrepancias en el cobro de peajes a nivel nacional en Colombia.",
+    "technologies": ["Java", "Spring Boot", "Angular", "Power BI"],
+    "repoUrl": "",
+    "category": "fullstack"
   }
 ]
